@@ -1,14 +1,14 @@
-""" Basic todo list using webpy 0.3 """
+""" Basic item list using webpy 0.3 """
 import web
 import model
 
 ### Url mappings
 
 urls = (
-    '/', 'Index',
-    '/(\d+)', 'Index',
-    '/del/(\d+)', 'Delete'
-)
+        '/', 'Index',
+        '/new', 'New',
+        '/delete/(\d+)', 'Delete',
+        )
 
 
 ### Templates
@@ -17,32 +17,28 @@ render = web.template.render('templates', base='base')
 
 class Index:
 
-    form = web.form.Form(
-        web.form.Textbox('title', web.form.notnull, description="I need to:"),
-        web.form.Button('Add todo'),
-        web.form.Textbox('title', web.form.notnull, description="I need to:"),
-        web.form.Button('Add todo'),
-    )
+    form = web.form.Form()
 
     def GET(self):
         """ Show page """
         items = model.get_items()
         form = self.form()
         return render.index(items, form)
-
+    
+  
     def POST(self):
         """ Add new entry """
         form = self.form()
         if not form.validates():
-            todos = model.get_todos()
-            return render.index(todos, form)
-        model.new_todo(form.d.title)
+            items = model.get_items()
+            return render.index(items, form)
+        model.new_item(form.d.title)
         raise web.seeother('/')
 
     def DELETE(self, id):
         """ Delete based on ID """
         id = int(id)
-        model.del_todo(id)
+        model.del_item(id)
         raise web.seeother('/')
 
 
@@ -51,9 +47,17 @@ class Delete:
     def POST(self, id):
         """ Delete based on ID """
         id = int(id)
-        model.del_todo(id)
+        model.del_item(id)
         raise web.seeother('/')
 
+class New:
+    
+    form = web.form.Form()
+        
+    def GET(self):
+        form = self.form()
+        return render.new(form)
+                             
 
 app = web.application(urls, globals())
 

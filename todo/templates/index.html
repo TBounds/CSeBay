@@ -1,4 +1,4 @@
-$def with (todos, form)
+$def with (items, form)
 
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
@@ -9,7 +9,6 @@ $def with (todos, form)
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
 
 
-<!-- todo.py needs to be changed to item.py -->
 <table class = "table table-hover" style = "width:100%;">
     <tr>
         <th>Auction ID</th>
@@ -20,23 +19,27 @@ $def with (todos, form)
     </tr>
     
     <tr>
-    	<td><input type="search" class="form-control" placeholder="Search"></td>
+    	<td>
+        	<form action="/index" method="get">
+        		<input sName="id" type="search" class="form-control" placeholder="Search">
+        	</form>
+        </td>
     	<td><input type="search" class="form-control" placeholder="Search"></td>
     	<td><input type="search" class="form-control" placeholder="Search"></td>
     	<td><input type="search" class="form-control" placeholder="Search"></td>
     	<td><input type="search" class="form-control" placeholder="Search"></td>
     </tr>
-$for todo in todos:		
+$for item in items:		
     <tr>
-        <td>$todo.id</td>
-        <td>$todo.title</td>
-        <td>$todo.category</td>
-        <td>$todo.price</td>
-        <td>$todo.end_date</td>
+        <td>$item.id</td>
+        <td>$item.title</td>
+        <td>$item.category</td>
+        <td>$item.price</td>
+        <td>$item.end_date</td>
         
         <!--
         <td>
-            <form action="/del/$todo.id" method="post">
+            <form action="/del/$item.id" method="post">
                 <input type="submit" class="btn btn-default" value="Delete"/>
             </form>
         </td>
