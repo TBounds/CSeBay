@@ -20,7 +20,54 @@ $def with (items, form)
     
     <tr>
     	<td>
+        	<form action="/index"$def with (items, form)
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+<!-- Latest compiled JavaScript -->
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
+
+<table class = "table table-hover" style = "width:100%;">
+    <tr>
+        <th>Auction ID</th>
+        <th>Description</th>
+      	<th>Category</th>
+        <th>Current Bid</th>
+        <th>End Date</th>
+		<th>Status</th>
+    </tr>
+
+    <tr>
+    	<td>
         	<form action="/index" method="get">
+        		<input sName="id" type="search" class="form-control" placeholder="Search">
+				
+        	</form>
+        </td>
+    	<td><input type="search" class="form-control" placeholder="Search"></td>
+    	<td><input type="search" class="form-control" placeholder="Search"></td>
+    	<td><input type="search" class="form-control" placeholder="Search"></td>
+    	<td><input type="search" class="form-control" placeholder="Search"></td>
+		<td><input type="search" class="form-control" placeholder="Search"></td>
+    </tr>
+$for item in items:		
+    <tr>
+        <td>$item.id</td>
+        <td>$item.title</td>
+        <td>$item.category</td>
+        <td>$item.price</td>
+        <td>$item.end_date</td>
+		<td>$item.open</td>
+        
+    </tr>    
+</table>  
+
+<form action="" method="post">
+$:form.render_css()
+</form> method="get">
         		<input sName="id" type="search" class="form-control" placeholder="Search">
         	</form>
         </td>
