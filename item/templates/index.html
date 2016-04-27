@@ -4,7 +4,7 @@ $def with (items, form)
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 
 <!-- Latest compiled JavaScript -->
-<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"> </script>
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
 
@@ -20,9 +20,11 @@ $def with (items, form)
 
     <tr>
     	<td>
-        	<form action="/index" method="get">
-        		<input sName="id" type="search" class="form-control" placeholder="Search">
-				
+			<form action="" method="get"> <!-- action="/index" -->
+				<input type="text" name="term" type="search" placeholder = "Search" class="form-control"/><br /> 
+				<script>
+					
+				</script>
         	</form>
         </td>
     	<td><input type="search" class="form-control" placeholder="Search"></td>
@@ -31,15 +33,19 @@ $def with (items, form)
     	<td><input type="search" class="form-control" placeholder="Search"></td>
 		<td><input type="search" class="form-control" placeholder="Search"></td>
     </tr>
-$for item in items:		
+$for item in items:	
     <tr>
         <td>$item.id</td>
         <td>$item.title</td>
         <td>$item.category</td>
         <td>$item.price</td>
         <td>$item.end_date</td>
-		<td>$item.open</td>
-        
+		<td>$item.open</td>    
+        <td>
+            <form action="/item/$item.id" method="get">
+                <input type="Submit" class="btn btn-default" value="Bid"/>
+            </form>
+        </td>       
     </tr>    
 </table>  
 
