@@ -1,0 +1,44 @@
+$def with (item)
+
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+<!-- Latest compiled JavaScript -->
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
+
+
+
+<h2>$item.title&nbsp;&nbsp; - &nbsp;&nbsp;ID# $item.id</h2>
+
+<div style="display:inline-block; float:left; margin-right:40px;">
+<dl>
+  <dt>Category</dt>
+  <dd>$item.category</dd>
+  <dt>End Date</dt>
+  <dd>$item.end_date</dd>
+  <dt>Price</dt>
+  <dd>\$$item.price</dd>
+  <br>
+  <p></p>
+  <dt>Description</dt>
+  <dd>$item.description</dd>
+</dl>
+
+</div>
+
+<div style="display:inline-block; float:left; padding:10px;">
+	<form action="/new" method="post">
+    	<div class="form-group">
+    		<label for="Bid">Bid</label>
+    		<textarea type="text" class="form-control" rows="1" name="bid" placeholder="Bid"></textarea>
+  		</div>
+        
+     	<div class="form-group">
+    		<label for="user">User</label>
+    		<textarea type="text" class="form-control" rows="1" name="user" placeholder="User"></textarea>
+  		</div>
+    </form>
+</div>

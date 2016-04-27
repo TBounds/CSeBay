@@ -9,37 +9,41 @@ $def with (form)
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
 
-<form>
+<form action="/new" method="post">
+
 	<div class="form-group">
-    	<label for="exampleInputEmail1">Description</label>
-        <textarea class="form-control" placeholder="Text input" rows="5"></textarea>
+    	<label for="Title">Title</label>
+    	<textarea type="text" class="form-control" rows="1" name="Title" placeholder="Title"></textarea>
   	</div>
     
-    
-    
+	<div class="form-group">
+    	<label for="Description">Description</label>
+        <textarea type="text" class="form-control" placeholder="Description" name="Description" rows="5"></textarea>
+  	</div>
+     
   	<div class="form-group">
     	<label for="buyPrice">Buy Price</label>
-    	<input type="text" class="form-control" id="buyPrice" placeholder="Buy Price">
+    	<textarea type="text" class="form-control" rows="1" name="buyPrice" placeholder="Buy Price"></textarea>
   	</div>
+    
   	<div class="form-group">
     	<label for="startDate">Start Date</label>
- 	   <input type="datetime" class="form-control" id="startDate" placeholder="Start Date">
+ 	   <textarea type="text" class="form-control" rows="1" name="startDate" placeholder="Is Open"></textarea>
   	</div>
     
   	<div class="form-group">
     	<label for="endDate">End Date</label>
- 	   <input type="datetime" class="form-control" id="endDate" placeholder="End Date">
+ 	   <textarea type="datetime" class="form-control" rows="1" name="endDate" placeholder="End Date"></textarea>
   	</div>
+    
     <div class="form-group">
-    	<label for="category">Category</label>
-    	<input type="text" class="form-control" id="category" placeholder="Category">
+    	<label for="Category">Category</label>
+    	<textarea type="text" class="form-control" rows="1" name="Category" placeholder="Category"></textarea>
   	</div>
     
     
     <button type="submit" class="btn btn-default">Submit</button>
 	<button type="submit" class="btn btn-default"><a href="/">Cancel</a></button>
+    
 </form>
   
-<form action="" method="post">
-$:form.render()
-</form>
