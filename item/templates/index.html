@@ -9,36 +9,40 @@ $def with (items, form)
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
 
 <table class = "table table-hover" style = "width:100%;">
-   
     <tr>
         <th>Auction ID</th>
         <th>Description</th>
       	<th>Category</th>
         <th>Current Bid</th>
         <th>End Date</th>
-    </tr>
-    
-    <tr>
-    	<td><input name="id" type="search" class="form-control" placeholder="Search"></td>
-    	<td><input name="desc" type="search" class="form-control" placeholder="Search"></td>
-    	<td><input name="category" type="search" class="form-control" placeholder="Search"></td>
-    	<td><input name="bid" type="search" class="form-control" placeholder="Search"></td>
-    	<td><input name="endDate" type="search" class="form-control" placeholder="Search"></td>
+		<th>Status</th>
     </tr>
 
+    <tr>
+    	<td>
+        	<form action="/index" method="get">
+        		<input sName="id" type="search" class="form-control" placeholder="Search">
+				
+        	</form>
+        </td>
+    	<td><input type="search" class="form-control" placeholder="Search"></td>
+    	<td><input type="search" class="form-control" placeholder="Search"></td>
+    	<td><input type="search" class="form-control" placeholder="Search"></td>
+    	<td><input type="search" class="form-control" placeholder="Search"></td>
+		<td><input type="search" class="form-control" placeholder="Search"></td>
+    </tr>
 $for item in items:		
     <tr>
         <td>$item.id</td>
         <td>$item.title</td>
         <td>$item.category</td>
         <td>$item.price</td>
-        <td>$item.end_date</td>     
-        <td>
-            <form action="/item/$item.id" method="get">
-                <input type="Submit" class="btn btn-default" value="Bid"/>
-            </form>
-        </td>       
-    </tr> 
-       
+        <td>$item.end_date</td>
+		<td>$item.open</td>
+        
+    </tr>    
 </table>  
 
+<form action="" method="post">
+$:form.render_css()
+</form>
