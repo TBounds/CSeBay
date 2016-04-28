@@ -42,8 +42,8 @@ class New:
     def POST(self):
         """ Add new entry """
         form = web.input()
-        # form.buyPrice = float(form.buyPrice)
-        # form.startDate = bool(form.startDate)
+        form.buyPrice = float(form.buyPrice)
+        form.startDate = bool(form.startDate)
         # form.endDate = datetime('now')
         model.new_item(form.Category, form.Title, form.Description, float(form.buyPrice), form.startDate, form.endDate)
         raise web.seeother('/')

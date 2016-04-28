@@ -38,6 +38,6 @@ def search_cat(id):
 def get_one_item(id):
     print("In get_one_item")
     try:
-        return db.select('items', where='id=$id', vars=locals())
+        return db.select('items', where='id=$id', vars=locals())[0]
     except IndexError:
         return None
