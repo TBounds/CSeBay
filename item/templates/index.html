@@ -20,12 +20,20 @@ $def with (items, form)
 
     <tr>
     	<td>
-			<form action="" method="get"> <!-- action="/index" -->
-				<input type="text" name="term" type="search" placeholder = "Search" class="form-control"/>
+			<form action="/searchid" method="get"> 
+				<input type="search" name="id" placeholder = "Search" class="form-control"/> 
         	</form>
         </td>
-    	<td><input type="search" class="form-control" placeholder="Search"></td>
-    	<td><input type="search" class="form-control" placeholder="Search"></td>
+    	<td>
+			<form action="/searchdesc" method="get"> 
+				<input type="search" name="id" placeholder = "Search" class="form-control"/> 
+        	</form>
+		</td>
+    	<td>
+            <form action="/searchcat" method="get"> 
+				<input type="search" name="id" placeholder = "Search" class="form-control"/> 
+        	</form>
+        </td>
     	<td><input type="search" class="form-control" placeholder="Search"></td>
     	<td><input type="search" class="form-control" placeholder="Search"></td>
 		<td><input type="search" class="form-control" placeholder="Search"></td>
@@ -39,8 +47,8 @@ $for item in items:
         <td>$item.end_date</td>
 		<td>$item.open</td>    
         <td>
-            <form action="/item/$item.id" method="get">
-                <input type="Submit" class="btn btn-default" value="Bid"/>
+              <form action="/item/$item.id" method="get">
+              <input type="Submit" class="btn btn-default" value="Bid"/>
             </form>
         </td>       
     </tr>    
