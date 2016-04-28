@@ -1,4 +1,4 @@
-$def with (item)
+$def with (item, bid)
 
 
 <!-- Latest compiled and minified CSS -->
@@ -10,7 +10,6 @@ $def with (item)
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
 
 
-
 <h2>$item.title&nbsp;&nbsp; - &nbsp;&nbsp;ID# $item.id</h2>
 
 <div style="display:inline-block; float:left; margin-right:40px;">
@@ -19,10 +18,15 @@ $def with (item)
   <dd>$item.category</dd>
   <dt>End Date</dt>
   <dd>$item.end_date</dd>
-  <dt>Price</dt>
+  <dt>Status</dt>
+  <dd>$item.open</dd>
+  <dt>Buy price</dt>
   <dd>\$$item.price</dd>
+  <dt>Top bid</dt>
+  <dd>\$$bid.price</dd>
+  <dt>Top bidder</dt> <!-- Display top bidder and price -->
+  <dd>$bid.buyer</dd>
   <br>
-  <p></p>
   <dt>Description</dt>
   <dd>$item.description</dd>
 </dl>
@@ -30,15 +34,16 @@ $def with (item)
 </div>
 
 <div style="display:inline-block; float:left; padding:10px;">
-	<form action="/new" method="post">
+	<form action="/newbid/$item.id" method="post">
     	<div class="form-group">
     		<label for="Bid">Bid</label>
-    		<textarea type="text" class="form-control" rows="1" name="bid" placeholder="Bid"></textarea>
+    		<input type="text" class="form-control" name="bid" placeholder="Bid">
   		</div>
         
      	<div class="form-group">
     		<label for="user">User</label>
-    		<textarea type="text" class="form-control" rows="1" name="user" placeholder="User"></textarea>
+    		<input type="text" class="form-control" name="user" placeholder="User">
   		</div>
+        <button type="submit" class="btn btn-default">Submit</button>
     </form>
 </div>
