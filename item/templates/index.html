@@ -14,6 +14,7 @@ $def with (items, form)
         <th>Description</th>
       	<th>Category</th>
         <th>Current Bid</th>
+        <th>Buy Price</th>
         <th>End Date</th>
 		<th>Status</th>
     </tr>
@@ -34,21 +35,38 @@ $def with (items, form)
 				<input type="search" name="id" placeholder = "Search" class="form-control"/> 
         	</form>
         </td>
-    	<td><input type="search" class="form-control" placeholder="Search"></td>
-    	<td><input type="search" class="form-control" placeholder="Search"></td>
-		<td><input type="search" class="form-control" placeholder="Search"></td>
+        <td>&nbsp;&nbsp;</td>
+    	<td>
+            <form action="/searchbid" method="get"> 
+				<input type="search" name="id" placeholder = "Search" class="form-control"/> 
+        	</form>
+        </td>
+    	<td>
+            <form action="/searchED" method="get"> 
+				<input type="search" name="id" placeholder = "Search" class="form-control"/> 
+        	</form>
+        </td>
+		<td>
+            <form action="/searchopen" method="get"> 
+				<input type="search" name="id" placeholder = "Search" class="form-control"/> 
+        	</form>
+        </td>
+        <td>
+            <button type="submit" class="btn btn-default">Search</button>
+        </td>
     </tr>
 $for item in items:	
     <tr>
         <td>$item.id</td>
         <td>$item.title</td>
         <td>$item.category</td>
-        <td>\$$item.price</td>
+        <td>$item.highBid</td>
+        <td>$item.price</td>
         <td>$item.end_date</td>
-		<td>$item.open</td>    
+		<td>$item.open</td>
         <td>
-              <form action="/item/$item.id" method="get">
-              <input type="Submit" class="btn btn-default" value="Bid"/>
+            <form action="/item/$item.id" method="get">
+               <input type="Submit" class="btn btn-default" value="Bid"/>
             </form>
         </td>       
     </tr>    
