@@ -11,7 +11,11 @@
     * Need auctions to close by themselves and update their status when the end date is reached
     * Auction closes when buy price is reacher/exceeded.
     * Display winner of auction.
+        - ex: bid button becomes a view button. Functions the same as bid, but the bidding capabilities are stripped.
+        - ex: add a winner's box for each auction which is blank until the auction closes.
     * Remove the bid button from a closed auction.
+    * Add time of bid.
+    * Be able to manually change the time. Whatever that means.
 
 #################
 ## Suggestions ##
