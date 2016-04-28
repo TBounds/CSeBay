@@ -12,14 +12,32 @@ def new_item(category, title, description, price, start, end):
 def del_todo(id):
     db.delete('items', where="id=$id", vars=locals())
 
-def search_items(id):
+def search_id(id):
+    print("In search_id")
     try:
-        return db.select('items', where='id=$id', vars=locals())[0]
+       return db.select('items', where="id=$id", vars=locals())
+    except IndexError:
+        return None 
+
+def search_desc(id):
+    print("In search_desc")
+    print(id)
+    try:
+       return db.select('items', where="title=$id", vars=locals())
     except IndexError:
         return None
-                         
-def get_one_item(id):
+
+def search_cat(id):
+    print("In search_cat")
+    print(id)
     try:
-        return db.select('items', where='id=$id', vars=locals())[0]
+       return db.select('items', where="category=$id", vars=locals())
+    except IndexError:
+        return None
+  
+def get_one_item(id):
+    print("In get_one_item")
+    try:
+        return db.select('items', where='id=$id', vars=locals())
     except IndexError:
         return None
