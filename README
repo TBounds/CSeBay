@@ -1,2 +1,21 @@
 (WEB) Search page:
-    Need to add "status" as a column and make it a search option.
+
+#####################
+## Features to Add ##
+#####################
+    * Need to block a bid from happening if it's less than top bid.
+    * Need to change the way we implement searching to enable compositional searches.
+        - ex: bid < 4 && price < 20
+    * Add search by current bid.
+    * Fix the date for end date.
+    * Need auctions to close by themselves and update their status when the end date is reached
+    * Auction closes when buy price is reacher/exceeded.
+    * Display winner of auction.
+    * Remove the bid button from a closed auction.
+
+#################
+## Suggestions ##
+#################
+    * Change start time to be the current time an auction is submitted.
+    * Change end time to a specifc time from the start time. 
+        - ex. 1 minute from the start time to demo auto closing.
