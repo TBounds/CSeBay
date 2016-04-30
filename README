@@ -12,6 +12,4 @@
 ##########
 ## Bugs ##
 ##########
-    * Refreshing the bid page after making a bid resubmits the bid without any checking.
-        - This effectively duplicates the last bid in the database.
-        - No plan to fix as of yet.
+    
