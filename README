@@ -4,7 +4,7 @@
 ## Features to Add ##
 #####################
     * Need to block a bid from happening if it's less than top bid.
-    * Need to change the way we implement searching to enable compositional searches.
+    * ~~Need to change the way we implement searching to enable compositional searches.~~
         - ex: bid < 4 && price < 20
     * Add search by current bid.
     * Fix the date for end date.
