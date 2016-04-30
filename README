@@ -4,22 +4,4 @@
 ## Features to Add ##
 #####################
     * Need to block a bid from happening if it's less than top bid.
-    * ~~Need to change the way we implement searching to enable compositional searches.~~
-        - ex: bid < 4 && price < 20
-    * Add search by current bid.
-    * Fix the date for end date.
-    * Need auctions to close by themselves and update their status when the end date is reached
-    * Auction closes when buy price is reacher/exceeded.
-    * Display winner of auction.
-        - ex: bid button becomes a view button. Functions the same as bid, but the bidding capabilities are stripped.
-        - ex: add a winner's box for each auction which is blank until the auction closes.
-    * Remove the bid button from a closed auction.
-    * Add time of bid.
-    * Be able to manually change the time. Whatever that means.
-
-#################
-## Suggestions ##
-#################
-    * Change start time to be the current time an auction is submitted.
-    * Change end time to a specifc time from the start time. 
-        - ex. 1 minute from the start time to demo auto closing.
+    
