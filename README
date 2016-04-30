@@ -9,4 +9,11 @@
         - price of bid
     * Should not accept bids from users that don't exist?
         - I think we can interpret this as no user, since we don't have an account/user creation function.
-        - Steve's idea: have predefined users in a table to compare against when making a bid,
+        - Steve's idea: have predefined users in a table to compare against when making a bid
+
+##########
+## Bugs ##
+##########
+    * Refreshing the bid page after making a bid resubmits the bid without any checking.
+        - This effectively duplicates the last bid in the database.
+        - No plan to fix as of yet.
