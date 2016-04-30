@@ -1,7 +1,11 @@
 (WEB) Search page:
 
-#####################
-## Features to Add ##
-#####################
-    * Need to block a bid from happening if it's less than top bid.
-    
+###########
+## Goals ##
+###########
+    * Display previous bids for each auction and relevant information.
+        - name of bidder
+        - time of bid
+        - price of bid
+    *** Should not accept bids from users that don't exist?
+        - I think we can interpret this as no user, since we don't have an account/user creation function.
