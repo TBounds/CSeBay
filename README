@@ -3,13 +3,11 @@
 ###########
 ## Goals ##
 ###########
-    * Display previous bids for each auction and relevant information.
-        - name of bidder
-        - time of bid
-        - price of bid
-    * Should not accept bids from users that don't exist?
-        - I think we can interpret this as no user, since we don't have an account/user creation function.
-        - Steve's idea: have predefined users in a table to compare against when making a bid
+
+##############
+## Optional ##
+##############
+    * Pop up dialogue box for when a non existing user makes a bid.
 
 ##########
 ## Bugs ##
