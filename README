@@ -7,7 +7,9 @@
 ##############
 ## Optional ##
 ##############
-
+    * Implement a popup window for invalid user.
+    * Implement (popup window/page redirect) for (invalid input/no input) when auctioning an item.
+    
 ##########
 ## Bugs ##
 ##########
