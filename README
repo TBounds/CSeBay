@@ -1,15 +1,7 @@
-(WEB) Search page:
+Authors: Tyler Bounds, Stephen Brown, and Chris Hight
+Date: April 30th, 2016
+Class: CS 351 - Intro. to Database Systems
 
-###########
-## Goals ##
-###########
-
-##############
-## Optional ##
-##############
-    * Implement a popup window for invalid user.
-    * Implement (popup window/page redirect) for (invalid input/no input) when auctioning an item.
-    
-##########
-## Bugs ##
-##########
+Description: CSeBay is a web based mini auction program developed in HTML5, Javascript, Web.py, Sqlite, CSS3, and Bootstrap.
+             CSeBay contains the the core functions of an auction system: auction an item, auction search, auction bid, and 
+             to view the winning bid on a closed auction. Additionally, the user can change the system time for debugging purposes.
